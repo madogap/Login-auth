@@ -10,7 +10,10 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
 
-  constructor(private fb: FormBuilder, private toastr: ToastrService, private service:AuthService, private router:Router) {
+  constructor(private fb: FormBuilder, 
+    private toastr: ToastrService, 
+    private service:AuthService, 
+    private router:Router) {
 
   }
 
@@ -26,7 +29,8 @@ export class RegisterComponent {
   proceedRegisteration() {
     if (this.registerform.valid) {
       this.service.ProceedRegister(this.registerform.value).subscribe(res=>{
-        this.toastr.success('Please contact admin for enable acess','Registered Sucessfully')
+        this.toastr.success('Please contact admin for enable acess','Registered Sucessfully');
+        this.router.navigate(['login'])
       })
     } else {
       this.toastr.warning('Please enter valid data')

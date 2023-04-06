@@ -1,1 +1,13 @@
-<p>register works!</p>
+<mat-card>
+    <mat-card-header><h1>User Registerations</h1></mat-card-header>
+    <mat-card-content>
+        <form class="example-form" [formGroup]="registerform" (ngSubmit)="proceedRegisteration()">
+            <mat-form-field class="example-full-width">
+                <mat-label>User name</mat-label>
+                <input matInput formControlName="id">
+            </mat-form-field>
+
+            
+        </form>
+    </mat-card-content>
+</mat-card>
